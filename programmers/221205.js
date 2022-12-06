@@ -7,4 +7,4 @@ function solution(num, k) {
         }
     }
     return -1;
-}
+}f
