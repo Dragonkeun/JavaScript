@@ -1,1 +1,2 @@
-# Secret
+# Private
+## 유료 강의 모음
