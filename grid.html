@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+    }
+
+    main {
+      width: 100vw;
+    }
+
+    main>* {
+      padding: 0.8em;
+      color: slateblue;
+      background-color: lavender;
+    }
+
+    .sec-2 div {
+      /* display: none; */
+      margin: 1em;
+      padding: 1.6em;
+      line-height: 2.4em;
+      font-family: serif;
+      color: #555;
+      background-color: white;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 200px 1fr 300px;
+      grid-template-rows: 80px 200px auto 200px;
+      gap: 12px;
+    }
+
+    nav {
+      grid-column: 1 / -1;
+    }
+
+    footer {
+      grid-column: 1 / -1;
+    }
+
+    aside {
+      grid-row: 2 / 4;
+    }
+
+    .sec-1 {
+      grid-column: 2 / -1;
+    }
+  </style>
+  <title>Grid</title>
+</head>
+
+<body>
+  <main>
+    <nav>nav</nav>
+    <aside>aside</aside>
+    <section class="sec-1">sec-1</section>
+    <section class="sec-2">
+      sec-2
+      <div>
+        sec-2 내용
+      </div>
+    </section>
+    <section class="sec-3">sec-3</section>
+    <footer>footer</footer>
+  </main>
+</body>
+
+</html>
