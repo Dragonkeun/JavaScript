@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+    }
+
+    #wrapper {
+      display: grid;
+      gap: 12px;
+    }
+
+    #wrapper>* {
+      padding: 1em;
+      font-size: 1.2em;
+      color: royalblue;
+      font-weight: bold;
+      background-color: lightblue;
+    }
+
+    header {
+      position: relative;
+      min-width: 80px;
+    }
+
+    nav ul {
+      padding-left: 0.5em;
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    nav li {
+      /* display:inline-block; */
+      margin-right: 0.5em;
+      color: #333;
+      text-align: center;
+    }
+
+    #menu {
+      position: absolute;
+      top: 0;
+      right: 20px;
+      padding: 0.1em;
+      height: 64px;
+      line-height: 64px;
+      color: #333;
+      cursor: pointer;
+    }
+
+    main div {
+      margin: 1em;
+      padding: 1em;
+      height: 67vh;
+      color: #333;
+      font-weight: normal;
+      background-color: yellow;
+    }
+
+    @media (max-width:768px) {
+
+      /* mobile */
+      nav {
+        display: none;
+      }
+
+      #menu:hover+nav {
+        display: inherit;
+      }
+
+      nav li {
+        display: block;
+        text-align: center;
+        margin-bottom: 10px;
+        padding: 0.5em 0;
+      }
+    }
+
+    @media(min-width:769px) {
+
+      /* PC */
+      #menu {
+        display: none;
+      }
+
+      nav li {
+        margin-right: 3.5em;
+      }
+
+      #wrapper {
+        grid-template-columns: 200px 1fr;
+      }
+
+      header, footer {
+        grid-column: 1/-1;
+      }
+    }
+  </style>
+  <title>반응형 웹</title>
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>header
+      <div id="menu">MENU</div>
+      <nav>
+        <ul>
+          <li>HOME</li>
+          <li>PRODUCT</li>
+          <li>SALE</li>
+          <li>EVENT</li>
+          <li>LOGIN</li>
+        </ul>
+      </nav>
+    </header>
+    <aside>
+      aside
+    </aside>
+    <main>
+      main
+      <div>content</div>
+    </main>
+    <footer>
+      footer
+    </footer>
+  </div>
+</body>
+
+</html>
