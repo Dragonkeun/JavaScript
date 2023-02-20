@@ -1,0 +1,30 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+section {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 80%;
+}
+
+@media screen and (max-width:1200px) {
+
+  /* 태블릿 */
+  article {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width:768px) {
+
+  /* 모바일 */
+  article {
+    width: 45%;
+  }
+}

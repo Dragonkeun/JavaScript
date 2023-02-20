@@ -1,0 +1,85 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.table-wrapper {
+  margin-top: 5%;
+  width: 60%;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 50px solid blanchedalmond;
+}
+
+table {
+  /* border-collapse: collapse; 
+  table은 기본적으로 틈이 존재하는데, 이 틈을 없애기 위해 사용 */
+  border-collapse: collapse;
+  text-align: center;
+  border: 1px solid black;
+}
+
+th,
+td {
+  border-bottom: 1px solid black;
+  padding: 10px;
+  /* vertical-align: top;
+  세로 정렬을 위한 코드, 기본값은 center임 테이블 박스에 위에 붙거나(top), 아래 붙거나(bottom) 설정 가능inline, inline-block 요소 세로 정렬할 때도 사용 가능 */
+}
+
+img {
+  width: 50px;
+}
+
+.table-top td {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.product-name {
+  text-align: left;
+}
+
+.product-name p {
+  font-size: 12px;
+  font-weight: 400;
+  color: darkgray;
+}
+
+.amount {
+  text-align: right;
+  color: darkgray;
+}
+
+.price {
+  color: darkgray;
+  text-align: right;
+}
+
+.total {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.all-total {
+  text-align: right;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.buy-button {
+  all: unset;
+  margin-top: 30px;
+  padding: 10px;
+  font-size: 22px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.buy-button:hover {
+  color: red;
+}
