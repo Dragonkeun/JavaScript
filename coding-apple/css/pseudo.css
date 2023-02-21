@@ -1,0 +1,40 @@
+.first-input-file::file-selector-button {
+  all: unset;
+  padding: 10px;
+  margin-right: 5px;
+  background-color: black;
+  color: white;
+}
+
+.first-input-file::file-selector-button:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.second-input-file::-webkit-file-upload-button {
+  /* webkit : 크롬, 사파리 Edge에서만 적용되는 스타일 */
+  /* moz : Firefox에서만 적용되는 스타일 */
+  /* ms : Explorer에서만 적용되는 스타일 */
+  /* Shadow DOM을 확인하여 적용하여야 함 */
+  border: none;
+  background-color: blanchedalmond;
+  padding: 10px;
+}
+
+.third-input-file {
+  /* label을 이용하여 label을 디자인하고 input 버튼은 none하여 스타일링 하는게 가장 일반적 */
+  display: none;
+}
+
+input[type=range] {
+  /* appearance를 이용해 브라우저 기본 css를 안보이게 함 */
+  appearance: none;
+}
+
+input[type="range" i]::-webkit-slider-thumb {
+  appearance: none;
+  background-color: red;
+  width: 50px;
+  height: 50px;
+}
