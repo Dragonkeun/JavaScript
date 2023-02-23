@@ -1,0 +1,14 @@
+// scss 파일 맨 앞에 _ 를 붙히면 자동으로 css 파일이 생성되는 것을 막아줌
+// import용 파일이라는 것을 명시하는 셈
+// 하지만 부를 때는 @use '_reset'; 이 아닌 @use 'reset'; 으로 부름
+// .scss 확장자는 생략해도 됨
+body {
+  margin: 0;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+$리셋에있는컬러 : brown;
+// 이걸 sass.scss에 import해서 사용할꺼임

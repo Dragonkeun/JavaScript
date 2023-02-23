@@ -1,1 +1,84 @@
-/*# sourceMappingURL=sass.css.map */
+body {
+  margin: 0;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+h6 {
+  color: brown;
+}
+
+.background {
+  background-color: #2a4cb2;
+  font-size: 14px;
+}
+
+.box {
+  color: #eeeeee;
+  font-size: 18px;
+}
+
+.main-bg h4 {
+  font-size: 20px;
+}
+.main-bg button {
+  color: blue;
+}
+
+.btn-blue, .btn-red, .btn-green {
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+}
+
+.btn-green {
+  color: green;
+}
+
+.btn-red {
+  color: red;
+}
+
+.btn-blue {
+  color: blue;
+}
+
+.div-box-blue, .div-box-red, .div-box-green {
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+}
+
+.div-box-green {
+  background-color: green;
+}
+
+.div-box-red {
+  background-color: red;
+}
+
+.div-box-blue {
+  background-color: blue;
+}
+
+h2 {
+  font-size: 30px;
+  letter-spacing: -1px;
+}
+
+h3 {
+  font-size: 40px;
+  letter-spacing: -1px;
+}
+
+h4 {
+  font-size: 10px;
+  letter-spacing: 20px;
+}
+
+h5 {
+  font-size: 30px;
+  border: 3px;
+}/*# sourceMappingURL=sass.css.map */

@@ -1,0 +1,113 @@
+// 다른 파일에 있는 내용 가져오고 싶을 때 import
+// 맨 위에 써야 함. 안그러면 Error
+@use 'reset';
+
+h6 {
+  color: reset.$리셋에있는컬러;
+}
+
+// 변수 선언 후 사용하기
+$메인컬러 : #2a4cb2;
+$서브컬러 : #eeeeee;
+$기본사이즈 : 16px;
+
+.background {
+  background-color: $메인컬러;
+  font-size: $기본사이즈 - 2px;
+}
+
+.box {
+  color: $서브컬러;
+  font-size: $기본사이즈 + 2px;
+}
+
+// nesting 문법
+.main-bg {
+  h4 {
+    //nesting 문법, main-bg 안에 h4 에게 적용
+    font-size: 20px;
+  }
+
+  button {
+    color: blue;
+  }
+}
+
+// extend 문법, 버튼은 버튼인데 색깔만 다르고 나머지는 같을 때 임시클래스에 동일한 속성 넣어 놓은 후 적용
+%btn {
+  // %임시클래스명, 특징 : 단독으로 컴파일되지 않음
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+}
+
+.btn-green {
+  @extend %btn;
+  color: green;
+}
+
+.btn-red {
+  @extend %btn;
+  color: red;
+}
+
+.btn-blue {
+  @extend %btn;
+  color: blue;
+}
+
+// extend 연습
+%div-box {
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+}
+
+.div-box-green {
+  @extend %div-box;
+  background-color: green;
+}
+
+.div-box-red {
+  @extend %div-box;
+  background-color: red;
+}
+
+.div-box-blue {
+  @extend %div-box;
+  background-color: blue;
+}
+
+// mixin 문법, 긴 코드를 짧은 단어로 축약할 때 씀, 사용할 땐 @include
+// $파라미터
+@mixin 폰트스타일($폰트사이즈) {
+  font-size: $폰트사이즈;
+  letter-spacing: -1px;
+}
+
+h2 {
+  @include 폰트스타일(30px);
+}
+
+h3 {
+  @include 폰트스타일(40px);
+}
+
+@mixin 파라미터2개($첫, $둘) {
+  font-size: $첫;
+  letter-spacing: $둘;
+}
+
+h4 {
+  @include 파라미터2개(10px, 20px);
+}
+
+// 글자 중간에 $변수나 $파라미터 넣을 땐 #{ $변수명 }
+@mixin 글자중간($하나, $두개) {
+  font-size: $하나;
+  #{$두개}: 3px;
+}
+
+h5 {
+  @include 글자중간(30px, border);
+}
