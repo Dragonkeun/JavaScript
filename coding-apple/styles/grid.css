@@ -1,0 +1,34 @@
+/* 코딩애플 숙제 */
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+  grid-template-areas:
+    "헤더 헤더 헤더 헤더"
+    "사이드바 메인컨텐츠 메인컨텐츠 메인컨텐츠"
+    "사이드바 메인컨텐츠 메인컨텐츠 메인컨텐츠";
+}
+
+.nav {
+  grid-area: 헤더;
+  background-color: red;
+}
+
+.sidebar {
+  grid-area: 사이드바;
+  background-color: blue;
+}
+
+.content {
+  grid-area: 메인컨텐츠;
+  background-color: yellow;
+}
+
+@media screen and (max-width:768px) {
+  .grid-wrapper {
+    grid-template-areas:
+      "헤더 헤더 헤더 헤더"
+      "사이드바 사이드바 사이드바 사이드바"
+      "메인컨텐츠 메인컨텐츠 메인컨텐츠 메인컨텐츠";
+  }
+}
