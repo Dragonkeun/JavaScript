@@ -6,6 +6,10 @@ h6 {
   color: reset.$리셋에있는컬러;
 }
 
+ul {
+  list-style: none;
+}
+
 // 변수 선언 후 사용하기
 $메인컬러 : #2a4cb2;
 $서브컬러 : #eeeeee;
@@ -110,4 +114,54 @@ h4 {
 
 h5 {
   @include 글자중간(30px, border);
+}
+
+// 네스팅 문법을 이용한 리스트 구현(코딩애플 숙제1)
+.nesting-list-wrapper {
+  .nesting-list {
+    width: 300px;
+    height: 20px;
+    padding: 1%;
+    border: 1px solid dimgray;
+  }
+
+  .nesting-list:active {
+    background-color: #2a4cb2;
+  }
+}
+
+// alert 박스 만들기(코딩애플 숙제2)
+%alert-box {
+  width: 80vw;
+  height: 50px;
+  padding: 1%;
+  border: 1px solid black;
+  border-radius: 20px;
+  margin: 5px 30px;
+}
+
+@mixin 색상지정($배경색, $글자색) {
+  background-color: $배경색;
+  color: $글자색;
+}
+
+.alert-box {
+  @extend %alert-box;
+
+  span {
+    font-weight: 600;
+    font-size: 18px;
+  }
+}
+
+.first-box {
+  @include 색상지정(red, blue);
+}
+
+.second-box {
+  @include 색상지정(orange, purple);
+}
+
+.third-box {
+  @include 색상지정(dimgray, white);
 }

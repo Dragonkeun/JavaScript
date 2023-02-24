@@ -10,6 +10,10 @@ h6 {
   color: brown;
 }
 
+ul {
+  list-style: none;
+}
+
 .background {
   background-color: #2a4cb2;
   font-size: 14px;
@@ -81,4 +85,43 @@ h4 {
 h5 {
   font-size: 30px;
   border: 3px;
+}
+
+.nesting-list-wrapper .nesting-list {
+  width: 300px;
+  height: 20px;
+  padding: 1%;
+  border: 1px solid dimgray;
+}
+.nesting-list-wrapper .nesting-list:active {
+  background-color: #2a4cb2;
+}
+
+.alert-box {
+  width: 80vw;
+  height: 50px;
+  padding: 1%;
+  border: 1px solid black;
+  border-radius: 20px;
+  margin: 5px 30px;
+}
+
+.alert-box span {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.first-box {
+  background-color: red;
+  color: blue;
+}
+
+.second-box {
+  background-color: orange;
+  color: purple;
+}
+
+.third-box {
+  background-color: dimgray;
+  color: white;
 }/*# sourceMappingURL=sass.css.map */
