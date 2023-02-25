@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .slide-container-wrapper {
+      overflow: hidden;
+    }
+
+    .slide-container {
+      width: 300vw;
+      transition: all 1s;
+    }
+
+    .slide-box {
+      width: 100vw;
+      float: left;
+    }
+
+    .slide-box img {
+      width: 100%;
+    }
+
+    .slide-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+  </style>
+  <title>carousel</title>
+</head>
+
+<body>
+  <div class="slide-container-wrapper">
+    <div class="slide-container">
+      <div class="slide-box">
+
+        <img src="../html-css/images/portfolio-1.jpeg">
+      </div>
+      <div class="slide-box">
+        <img src="../html-css/images/portfolio-2.jpeg">
+      </div>
+      <div class="slide-box">
+        <img src="../html-css/images/portfolio-3.jpeg">
+      </div>
+    </div>
+  </div>
+  <div class="slide-wrapper">
+    <button class="slide">1</button>
+    <button class="slide">2</button>
+    <button class="slide">3</button>
+  </div>
+  <script>
+    const slide = document.querySelectorAll(".slide");
+    const slideContainer = document.querySelector(".slide-container");
+    for (let i = 0; i < slide.length; i++) {
+      slide[i].addEventListener("click",
+        function () {
+          slideContainer.style.transform = `translateX(${i * -100}vw)`
+        });
+    }
+  </script>
+</body>
+
+</html>

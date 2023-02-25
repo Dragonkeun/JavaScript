@@ -1,0 +1,51 @@
+<!-- 코딩애플 숙제 스크롤 내리면 글자 색 바꾸기 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    nav {
+      position: fixed;
+      padding: 10px;
+    }
+
+    .first {
+      height: 500px;
+      background-color: red;
+    }
+
+    .second {
+      height: 500px;
+      background-color: blue;
+    }
+  </style>
+  <title>scroll</title>
+</head>
+
+<body>
+  <nav>
+    <div>LOGO</div>
+  </nav>
+  <div class="first"></div>
+  <div class="second"></div>
+  <script>
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 100) {
+        document.querySelector(".nav").style.color = "white";
+      }
+      else {
+        document.querySelector(".nav").style.color = "black";
+      }
+    });
+    const nav = document.querySelector("nav");
+    // nav 자리에 html 넣으면 무슨 차이인지 구분하기 쉬워짐
+    console.log(`nav의 height : ${nav.scrollHeight}`);
+    console.log(`nav의 스크롤바를 얼마나 내렸는지 : ${nav.scrollTop}`);
+    console.log(`nav가 화면에 보이는 부분 높이 : ${nav.clientHeight}`);
+  </script>
+</body>
+
+</html>
