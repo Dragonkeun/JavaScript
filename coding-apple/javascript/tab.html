@@ -72,16 +72,31 @@
     // 0번 버튼 누르면 orange, show 추가, 나머지에는 다 orange, show 제거
     const tabButton = document.querySelectorAll(".tab-button");
     const tabContent = document.querySelectorAll(".tab-content");
-    for (let i = 0; i < tabButton.length; i++) {
-      tabButton[i].addEventListener("click", function () {
-        for (let j = 0; j < tabButton.length; j++) {
-          tabButton[j].classList.remove("orange");
-          tabContent[j].classList.remove("show");
+
+    // 첫 번째 방법. 이벤트 버블링을 배우기 전
+    // for (let i = 0; i < tabButton.length; i++) {
+    //   tabButton[i].addEventListener("click", function () {
+    //     for (let j = 0; j < tabButton.length; j++) {
+    //       tabButton[j].classList.remove("orange");
+    //       tabContent[j].classList.remove("show");
+    //     }
+    //     tabButton[i].classList.add("orange");
+    //     tabContent[i].classList.add("show");
+    //   })
+    // }
+
+    // 이벤트 버블링을 배우고 난 후 addEventListener를 줄이기 위해 list에 클릭을 감지하고, e.target으로 현재 클릭된 요소를 파악하여 클래스명 추가, 삭제하기
+    const list = document.querySelector(".list");
+    list.addEventListener("click", function (e) {
+      for (let k = 0; k < tabButton.length; k++) {
+        tabButton[k].classList.remove("orange");
+        tabContent[k].classList.remove("show");
+        if (e.target == tabButton[k]) {
+          tabButton[k].classList.add("orange");
+          tabContent[k].classList.add("show");
         }
-        tabButton[i].classList.add("orange");
-        tabContent[i].classList.add("show");
-      })
-    }
+      }
+    })
   </script>
 </body>
 

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dataset</title>
+</head>
+
+<body>
+  <!-- data-자료이름="값" 으로 데이터값 -->
+  <div class="data-box" data-datagogosing="데이터한번넣어보자">데이터를 넣을 바구니~</div>
+  <script>
+    const dataBox = document.querySelector(".data-box");
+    // 셀렉터.dataset.자료이름으로 하면 데이터 출력 가능
+    console.log(dataBox.dataset.datagogosing);
+  </script>
+</body>
+
+</html>
