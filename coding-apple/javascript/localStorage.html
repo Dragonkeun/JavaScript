@@ -1,0 +1,79 @@
+<!-- localStorage, sessionStorage : key : value 형태로 저장 가능, 문자, 숫자만 저장 가능,
+  localStorage는 사이트 재접속해도 유지, sessionStorage는 사이트나가면 자동 삭제
+  IndexedDB : 구조화된 대용랑데이터 저장 시
+  Cookies : 보통 로그인정보 저장
+  Cache Storage : html, css, js 파일 저장하는 곳
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      gap: 10px;
+    }
+
+    .product {
+      width: 200px;
+      height: 330px;
+      text-align: center;
+      border: 1px solid dimgray;
+    }
+
+    .product img {
+      width: 100%;
+      height: 60%;
+    }
+  </style>
+  <title>localStorage</title>
+</head>
+
+<body>
+  <div class="product">
+    <img src="../html-css/images/iphone.png" alt="상품">
+    <h3 class="title">호날두</h3>
+    <p>가격 : <span class="price">40000</span></p>
+    <button class="buy-button">주문하기</button>
+  </div>
+  <div class="product">
+    <img src="../html-css/images/iphone.png" alt="상품">
+    <h3 class="title">메시</h3>
+    <p>가격 : <span class="price">70000</span></p>
+    <button class="buy-button">주문하기</button>
+  </div>
+
+  <script>
+    // localStorage에 array값을 넣으면 [1, 2, 3] 을 넣어도 1, 2, 3으로 들어감
+    // 이 문제를 해결하기 위해 JSON.stringify로 JSON 형식으로 바꿔서 넣고, JSON.parse로 다시 array로 변경하여서 출력
+    // object도 똑같이 JSON.stringify로 JSON으로 바꿔서 넣고 JSON.parse로 다시 object로 바꿔서 출력해야 함
+    // sessionStorage는 그냥 localStorage -> sessionStorage로 바꾸면 끝
+    const arr = [1, 2, 3];
+    const newArr = JSON.stringify(arr);
+    localStorage.setItem("arrayKey", newArr);
+    console.log(JSON.parse(localStorage.getItem("arrayKey")));
+
+    // 구매하기 버튼 누르면 localStorage에 상품명(title) 저장하기
+    const title = document.querySelectorAll(".title");
+    const buyButton = document.querySelectorAll(".buy-button");
+    for (let i = 0; i < buyButton.length; i++) {
+      buyButton[i].addEventListener("click", () => {
+        if (localStorage.getItem("장바구니") != null) { // 장바구니에 이미 뭔가가 있을 때는 변경이 아니고 추가해야 함
+          const 기존장바구니 = JSON.parse(localStorage.getItem("장바구니"));
+          기존장바구니.push(title[i].textContent);
+          localStorage.setItem("장바구니", JSON.stringify(기존장바구니));
+        }
+        else { // 장바구니에 아무것도 없으면 그냥 넣으면 됨
+          localStorage.setItem("장바구니", JSON.stringify(title[i].textContent));
+        }
+      })
+    }
+
+// previousElementSibling 을 사용하면 찾은 요소의 상위 요소를 찾을 수 있다고 한다.
+  </script>
+</body>
+
+</html>

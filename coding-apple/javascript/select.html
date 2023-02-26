@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+  <title>Document</title>
+</head>
+
+<body>
+  <form action="">
+    <p>상품선택</p>
+    <select name="" id="" class="category-select">
+      <option value="">사이즈가 없는 상품</option>
+      <option value="">사이즈가 있는 셔츠</option>
+    </select>
+    <select name="" id="" class="size-select hidden">
+      <option value="">S</option>
+      <option value="">M</option>
+    </select>
+  </form>
+  <script>
+    const categorySelect = document.querySelector(".category-select");
+    const sizeSelect = document.querySelector(".size-select");
+    categorySelect.addEventListener("input", function () {
+      if (categorySelect.selectedIndex == 1) {
+        sizeSelect.classList.remove("hidden");
+      }
+      else {
+        sizeSelect.classList.add("hidden");
+      }
+    })
+  </script>
+</body>
+
+</html>

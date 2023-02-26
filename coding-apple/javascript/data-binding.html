@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>data-binding</title>
+  <style>
+    body {
+      display: flex;
+      gap: 10px;
+    }
+
+    .product {
+      width: 200px;
+      height: 330px;
+      text-align: center;
+      border: 1px solid dimgray;
+    }
+
+    .product img {
+      width: 100%;
+      height: 60%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="product">
+    <img src="../html-css/images/iphone.png" alt="상품">
+    <h3 class="title">Card Title</h3>
+    <p>가격 : <span class="price">70000</span></p>
+    <button>주문하기</button>
+  </div>
+  <div class="product">
+    <img src="../html-css/images/iphone.png" alt="상품">
+    <h3 class="title">Card Title</h3>
+    <p>가격 : <span class="price">70000</span></p>
+    <button>주문하기</button>
+  </div>
+  <div class="product">
+    <img src="../html-css/images/iphone.png" alt="상품">
+    <h3 class="title">Card Title</h3>
+    <p>가격 : <span class="price">70000</span></p>
+    <button>주문하기</button>
+  </div>
+  <script>
+    const products = [
+      { id: 0, price: 70000, title: "짱짱상품" },
+      { id: 1, price: 60000, title: "대박상품" },
+      { id: 2, price: 50000, title: "짱좋은상품" }
+    ];
+    const title = document.querySelectorAll(".title");
+    const price = document.querySelectorAll(".price");
+    for (let i = 0; i < title.length; i++) {
+      title[i].innerHTML = products[i].title;
+      price[i].innerHTML = products[i].price;
+    }
+  </script>
+</body>
+
+</html>

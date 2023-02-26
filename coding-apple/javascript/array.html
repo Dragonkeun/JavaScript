@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const 숫자를정렬해보자 = [7, 3, 5, 2, 40];
+    숫자를정렬해보자.sort(function (a, b) { //.sort()만 붙히면 문자순으로 정렬하므로 숫자는 .sort()가 아니고 이렇게 정렬해주어야 한다.
+      return a - b; // 내림차순 하려면 b - a
+    })
+    console.log(숫자를정렬해보자);
+
+    const 문자를정렬해보자 = ['라', 'a', 'c', 'b', '가', '다', '나'];
+    console.log(문자를정렬해보자.sort());
+
+    const 가격순으로정렬해보자 = [
+      { id: 0, price: 70000, title: '7만원짜리 상품' },
+      { id: 1, price: 50000, title: '5만원짜리 상품' },
+      { id: 2, price: 60000, title: '6만원짜리 상품' }
+    ]
+
+    가격순으로정렬해보자.sort(function (a, b) {
+      return a.price - b.price;
+    })
+    console.log(가격순으로정렬해보자);
+
+    //filter는 기존의 어레이(FIVE이상만뽑아보자)를 변형하지 않고, 새로운어레이(FIVE이상만뽑은새로운어레이)를 만들어줌
+    const FIVE이상만뽑아보자 = [1, 7, 87, 2, 4, 9, 12, 5, 3, 8, 0];
+    const FIVE이상만뽑은새로운어레이 = FIVE이상만뽑아보자.filter(function (a) {
+      return a > 5;
+    })
+    console.log(FIVE이상만뽑은새로운어레이);
+
+    //map도 있음
+    const TWO배로곱해보자 = [2, 3, 4, 6, 12];
+    const TWO배로곱한새로운어레이 = TWO배로곱해보자.map(function (a) {
+      return a * 2;
+    })
+    console.log(TWO배로곱한새로운어레이);
+  </script>
+</body>
+
+</html>

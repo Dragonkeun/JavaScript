@@ -37,7 +37,6 @@
   <div class="slide-container-wrapper">
     <div class="slide-container">
       <div class="slide-box">
-
         <img src="../html-css/images/portfolio-1.jpeg">
       </div>
       <div class="slide-box">
@@ -61,6 +60,27 @@
         function () {
           slideContainer.style.transform = `translateX(${i * -100}vw)`
         });
+    }
+
+    const slideBox = document.querySelectorAll(".slide-box");
+    let 시작좌표 = 0;
+    let 눌렀는지 = false;
+    for (let i = 0; i < slideBox.length; i++) {
+      slideBox[i].addEventListener("mousedown", function (e) {
+        // 마우스 클릭 시작 좌표를 구함
+        시작좌표 = e.clientX;
+        눌렀는지 = true;
+      })
+      slideBox[i].addEventListener("mousemove", function (e) {
+        if (눌렀는지) {
+          // 현재좌표 - 미리 구해놓은 시작좌표를 뺌 현재 좌표는 끝좌표임 mousedown 이므로
+          // 끝좌표(현재좌표) - 시작좌표 를 해서 이동거리를 구하는 거임
+          console.log(`이동한 거리 : ${e.clientX - 시작좌표}`);
+        }
+      })
+      slideBox[i].addEventListener("mouseup", function () {
+        눌렀는지 = false;
+      })
     }
   </script>
 </body>
